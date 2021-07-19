@@ -7,7 +7,7 @@ function App() {
   return (
     <div>
       <PageNavbar/>
-      <ListFacts />
+      <ListFacts limit={2}/>
     </div>
   );
 }
