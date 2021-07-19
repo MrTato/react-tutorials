@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { posts } from '../data/Posts';
 import { Table, Container } from 'reactstrap';
+import PropTypes from 'prop-types';
 
 class ListFacts extends Component {
     render() {
@@ -24,6 +25,9 @@ class ListFacts extends Component {
             </Container>
         );
     }
+};
+ListFacts.propTypes = {
+    limit: PropTypes.number
 };
 
 export default ListFacts;
