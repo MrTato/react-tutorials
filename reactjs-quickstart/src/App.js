@@ -1,15 +1,18 @@
+import React, { Component } from 'react';
 // import logo from './logo.svg';
 // import './App.css';
 import PageNavbar from './components/PageNavbar';
-import ListFacts from './components/ListFacts';
+import PostsListPage from './components/PostsListPage';
 
-function App() {
-  return (
-    <div>
-      <PageNavbar/>
-      <ListFacts limit={2}/>
-    </div>
-  );
+class App extends Component {
+  render() {
+    return (
+      <div>
+        <PageNavbar />
+        <PostsListPage />
+      </div>
+    );
+  }
 }
 
 export default App;

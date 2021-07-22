@@ -1,9 +1,8 @@
 import React from 'react';
-import { posts } from '../data/Posts';
 import { Table, Container } from 'reactstrap';
 import PropTypes from 'prop-types';
 
-const ListFacts = ({limit}) => {
+const ListPosts = ({limit, posts}) => {
     return (
         <Container>
             <Table>
@@ -24,8 +23,8 @@ const ListFacts = ({limit}) => {
         </Container>
     );
 };
-ListFacts.propTypes = {
+ListPosts.propTypes = {
     limit: PropTypes.number
 };
 
-export default ListFacts;
+export default ListPosts;
