@@ -8,7 +8,7 @@ class PostsListPage extends Component {
     };
 
     componentDidMount() {
-        const postsUrl = "https://jsonplaceholder.typicode.com/posts";
+        const postsUrl = "http://myjson.dit.upm.es/api/bins/qs3";
         httpService.get(postsUrl).then(posts => this.setState({
             posts: posts
         }));

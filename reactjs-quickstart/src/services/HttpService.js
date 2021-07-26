@@ -1,12 +1,8 @@
-import { posts } from "../data/Posts";
+import axios from "axios";
 
 class HttpService {
     get(url) {
-        const promiseAction = (resolve) => {
-            setTimeout(() => { resolve(posts); }, 2000);
-        };
-
-        return new Promise(promiseAction);
+        return axios.get(url).then((response) => response.data);
     }
 }
 
