@@ -1,9 +1,13 @@
 import React from 'react';
+import {observer} from 'mobx-react';
+import authService from '../services/AuthService';
 import { Table, Container } from 'reactstrap';
 import PropTypes from 'prop-types';
 import {Link} from "react-router-dom";
 
 const ListPosts = ({limit, posts}) => {
+    const canEdit = authService.authInfo && authService.authInfo.permissions.some(value => value === 'admin');
+
     return (
         <Container>
             <Table>
@@ -24,7 +28,7 @@ const ListPosts = ({limit, posts}) => {
                                 <td>{post.title}</td>
                                 <td>{post.body}</td>
                                 <td className="text-right">
-                                    <Link to={`/EditPost/${post.id}`}>Edit</Link>
+                                    {canEdit && <Link to={`/EditPost/${post.id}`}>Edit</Link>}
                                 </td>
                             </tr>
                         ))
@@ -38,4 +42,4 @@ ListPosts.propTypes = {
     limit: PropTypes.number
 };
 
-export default ListPosts;
+export default observer(ListPosts);
