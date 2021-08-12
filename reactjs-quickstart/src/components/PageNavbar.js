@@ -14,6 +14,7 @@ import {
   NavbarText
 } from 'reactstrap';
 import {Link} from "react-router-dom";
+import UserMenu from './UserMenu';
 
 const PageNavbar = (props) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -30,6 +31,7 @@ const PageNavbar = (props) => {
             <NavItem>
               <NavLink tag={Link} to="/Help/">Help</NavLink>
             </NavItem>
+            <UserMenu />
             <NavItem>
               <NavLink href="https://github.com/reactstrap/reactstrap">GitHub</NavLink>
             </NavItem>
